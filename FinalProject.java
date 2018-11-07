@@ -7,6 +7,6 @@ public class FinalProject {
   	String word = input.nextLine();
   	System.out.println(word);
     System.out.println("Welcome to our Word Guessing Game!");
-    
+
   }
 }
