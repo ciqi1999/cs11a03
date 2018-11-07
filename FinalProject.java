@@ -1,4 +1,4 @@
-import java.util.*；
+import java.util.*;
 
 public class FinalProject {
   public static void main(String[] args){
@@ -6,6 +6,6 @@ public class FinalProject {
   	String word = input.nextLine();
   	System.out.println(word);
     System.out.println("Welcome to our Word Guessing Game!");
-    
+
   }
 }
