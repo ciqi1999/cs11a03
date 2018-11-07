@@ -1,8 +1,8 @@
-import java.io.File;
+import java.io.*;
 import java.util.*;
 
 public class FinalProject {
-  public static void main(String[] args){
+  public static void main(String[] args)throws FileNotFoundException{
   	File f = new File("dictionary.txt");
   	Scanner input = new Scanner(f);
   	String word = input.nextLine();
