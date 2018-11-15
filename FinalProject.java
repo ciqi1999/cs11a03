@@ -3,8 +3,7 @@ import java.util.*;
 
 public class FinalProject {
   public static void main(String[] args)throws FileNotFoundException{
-  	File f = new File("dictionary.txt");
-  	Scanner input = new Scanner(f);
+  	Scanner input = new Scanner(new File("dictionary.txt"));
   	String word = input.nextLine();
 
     System.out.println("Welcome to our Word Guessing Game!");
@@ -17,7 +16,7 @@ public class FinalProject {
     //input Cindy's method
   }
   //Grace's Code
-
+  public static void GetDictionary(Scanner input)
   //Sindy's Code
   public static void userGuesses(char [] letterArray, char [] blankArray){ //verify "char [] letterArray"
     Scanner input = new Scanner (System.in);
