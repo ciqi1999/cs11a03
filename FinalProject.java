@@ -145,7 +145,4 @@ public static void PrintBlanks(char[] blanks){
     //Program checks if there are any more blank spaces. If yes, prompt user for another guess.
     } while (blank!=0);
   }
-
-  //Cindy's Code
-
 }
