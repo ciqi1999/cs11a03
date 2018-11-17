@@ -13,8 +13,6 @@ public class FinalProject {
     Shuffle(words, r);
 
     while(playGame){
-      // Input Grace's methods.
-
       System.out.println("Welcome to our Word Guessing Game!");
       //input Grace's method
         //need to put letters of the word into wordArray array
