@@ -23,6 +23,7 @@ public class FinalProject {
       //input Sindy's method
       //userGuesses(<letterArray>, <blankArray>);
 
+      //input Cindy's method
       System.out.println("Do you want to play again? Please enter \"yes\" or \"no\"");
       if (userInput.nextLine().equals("no")){
         System.out.println("Goodbye");
