@@ -20,7 +20,6 @@ public class FinalProject {
       PrintBlanks();
         //need to put letters of the word into wordArray array
 
-
       //input Sindy's method
       userGuesses();
       //userGuesses(<letterArray>, <blankArray>);
