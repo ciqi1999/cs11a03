@@ -5,20 +5,31 @@ public class FinalProject {
   public static void main(String[] args)throws FileNotFoundException{
     Scanner input1 = new Scanner(new File("dictionary.txt"));
     Scanner input2 = new Scanner(new File("dictionary.txt"));
+    Scanner userInput = new Scanner(System.in);
     Random r = new Random();
+    boolean playGame = true;
 
-    // Input Grace's methods.
-    String[] words = GetDictionary(input1, input2);
-    Shuffle(words, r);
 
-    System.out.println("Welcome to our Word Guessing Game!");
-    //input Grace's method
-      //need to put letters of the word into wordArray array
+    while(playGame){
+      // Input Grace's methods.
+      String[] words = GetDictionary(input1, input2);
+      Shuffle(words, r);
 
-    //input Sindy's method
-    //userGuesses(<letterArray>, <blankArray>);
+      System.out.println("Welcome to our Word Guessing Game!");
+      //input Grace's method
+        //need to put letters of the word into wordArray array
 
-    //input Cindy's method
+
+      //input Sindy's method
+      //userGuesses(<letterArray>, <blankArray>);
+
+      //input Cindy's method
+      System.out.println("Do you want to play again? Please enter /"yes/" or /"no/"");
+      if (userInput.nextLine().equals("no")){
+        System.out.println("Goodbye");
+        playGame = false;
+      }
+    }
   }
 //Grace's Code
 
@@ -54,7 +65,7 @@ public static void Shuffle(String[] words, Random r){
    }
 }
 
-// Methods Purpose: read an element from the array and 
+// Methods Purpose: read an element from the array and
 //                 put letters of that words into an array of chars;
 // Input: array words[], int index
 // Output: array letters[]
@@ -67,9 +78,9 @@ public static char[] CreateLetters(String[] words, int index){
   return letters;
 }
 
-// Method Purpose: create an array of underscores with the number of 
-//                 underscores equal to the number of letters in the 
-//                 word chosen above. 
+// Method Purpose: create an array of underscores with the number of
+//                 underscores equal to the number of letters in the
+//                 word chosen above.
 // Input: array words[], int index
 // Output: array blanks[]
 public static char[] CreateBlanks(String[] words, int index){
@@ -78,10 +89,10 @@ public static char[] CreateBlanks(String[] words, int index){
   for(int i = 0; i < l; i++){
     blanks[i] = '_';
   }
-  return blanks;  
+  return blanks;
 }
 
-// Method Purpose: Print out letters in array blanks[] 
+// Method Purpose: Print out letters in array blanks[]
 // Input: array blanks[]
 // Output: nothing
 public static void PrintBlanks(char[] blanks){
@@ -136,4 +147,5 @@ public static void PrintBlanks(char[] blanks){
   }
 
   //Cindy's Code
+
 }
