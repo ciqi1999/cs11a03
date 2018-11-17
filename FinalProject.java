@@ -15,8 +15,8 @@ public class FinalProject {
 
     while(playGame){
       //input Grace's method
-      char[] letters = CreateLetters();
-      char[] blanks = CreateBlanks();
+      char[] letters = CreateLetters(words, index);
+      char[] blanks = CreateBlanks(words, index);
       PrintBlanks();
         //need to put letters of the word into wordArray array
 
