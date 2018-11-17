@@ -9,11 +9,11 @@ public class FinalProject {
     Random r = new Random();
     boolean playGame = true;
 
+    String[] words = GetDictionary(input1, input2);
+    Shuffle(words, r);
 
     while(playGame){
       // Input Grace's methods.
-      String[] words = GetDictionary(input1, input2);
-      Shuffle(words, r);
 
       System.out.println("Welcome to our Word Guessing Game!");
       //input Grace's method
