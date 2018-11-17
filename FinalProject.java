@@ -15,10 +15,14 @@ public class FinalProject {
 
     while(playGame){
       //input Grace's method
+      char[] letters = CreateLetters();
+      char[] blanks = CreateBlanks();
+      PrintBlanks();
         //need to put letters of the word into wordArray array
 
 
       //input Sindy's method
+      userGuesses();
       //userGuesses(<letterArray>, <blankArray>);
 
       //input Cindy's method
