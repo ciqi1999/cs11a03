@@ -11,9 +11,9 @@ public class FinalProject {
 
     String[] words = GetDictionary(input1, input2);
     Shuffle(words, r);
+    System.out.println("Welcome to our Word Guessing Game!");
 
     while(playGame){
-      System.out.println("Welcome to our Word Guessing Game!");
       //input Grace's method
         //need to put letters of the word into wordArray array
 
