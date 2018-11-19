@@ -124,7 +124,7 @@ public static void PrintBlanks(char[] blanks){
           //Prints that letter onto the place where the underscore has the location
           blankArray[index] = letter;
           postCount--;
-        } else {
+        } else if (blankArray[index]=='_'){
           blank++;
         }
       }
