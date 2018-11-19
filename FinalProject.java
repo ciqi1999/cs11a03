@@ -72,7 +72,7 @@ public static void Shuffle(String[] words, Random r){
 public static char[] CreateLetters(String[] words, int index){
   int l = words[index].length();
   char[] letters = new char[l];
-  for(int i = 0; i < l; i++){ 
+  for(int i = 0; i < l; i++){
     letters[i] = words[index].charAt(i);
   }
   return letters;
@@ -121,7 +121,7 @@ public static void PrintBlanks(char[] blanks){
         if (letterArray[index]==letter){
           //Prints that letter onto the place where the underscore has the location
           blankArray[index] = letter;
-          leftover=blankArray.length-1;
+          leftover--;
         } else {
           blank++;
         }
