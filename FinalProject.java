@@ -23,7 +23,6 @@ public class FinalProject {
 
       //input Sindy's method
       userGuesses(letters, blanks);
-      //userGuesses(<letterArray>, <blankArray>);
 
       //input Cindy's method
       System.out.println("Do you want to play again? Please enter \"yes\" or \"no\"");
@@ -105,7 +104,7 @@ public static void PrintBlanks(char[] blanks){
 }
 
   //Sindy's Code
-  public static void userGuesses(char[] letterArray, char[] blankArray){ //verify "char [] letterArray"
+  public static void userGuesses(char[] letterArray, char[] blankArray){
     Scanner input = new Scanner (System.in);
     int leftover = blankArray.length; //Program uses this to penalize the user for incorrect guesses
     int blank; // Program uses this to see if more guesses can be made
@@ -133,9 +132,9 @@ public static void PrintBlanks(char[] blanks){
         //Takes point away
         lives--;
         if (lives!=0){
-          System.out.printf("Nope, no %c. Lives: %d.%n", letter, lives);
+          System.out.printf("Nope, no \"%c\". Lives: %d%n%n", letter, lives);
         } else {
-          System.out.printf("Nope, no %c. Lives: %d. Game over.%n", letter, lives);
+          System.out.printf("Nope, no \"%c\". Lives: %d %nGame over.%n%n", letter, lives);
           System.exit(1);
         }
       } else {
