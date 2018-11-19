@@ -49,7 +49,6 @@ public static String[] GetDictionary(Scanner input1, Scanner input2){
   String[] words = new String[count];
   for(int i = 0; i < count; i++){
     words[i] = input2.next();
-    System.out.println(words[i]);
   }
   //return the array.
   return words;
