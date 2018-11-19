@@ -145,7 +145,7 @@ public static void PrintBlanks(char[] blanks){
         int trash=0; //I just had to put an else statement
       }
 
-      System.out.println(blankArray);
+      PrintBlanks(blankArray);
     //Program checks if there are any more blank spaces. If yes, prompt user for another guess.
     } while (blank!=0);
   }
