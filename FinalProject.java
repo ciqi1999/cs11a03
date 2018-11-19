@@ -29,6 +29,8 @@ public class FinalProject {
       if (userInput.nextLine().equals("no")){
         System.out.println("Goodbye");
         playGame = false;
+      } else {
+        Shuffle(words, r);
       }
     }
   }
