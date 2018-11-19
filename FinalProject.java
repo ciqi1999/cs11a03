@@ -25,7 +25,7 @@ public class FinalProject {
       userGuesses(letters, blanks);
 
       //input Cindy's method
-      System.out.println("Do you want to play again? Please enter \"yes\" or \"no\"");
+      System.out.println("You win! Do you want to play again? Please enter \"yes\" or \"no\"");
       if (userInput.nextLine().equals("no")){
         System.out.println("Goodbye");
         playGame = false;
