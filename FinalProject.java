@@ -18,11 +18,11 @@ public class FinalProject {
       //input Grace's method
       char[] letters = CreateLetters(words, index);
       char[] blanks = CreateBlanks(words, index);
-      PrintBlanks();
+      PrintBlanks(blanks);
         //need to put letters of the word into wordArray array
 
       //input Sindy's method
-      userGuesses();
+      userGuesses(letters, blanks);
       //userGuesses(<letterArray>, <blankArray>);
 
       //input Cindy's method
@@ -106,7 +106,7 @@ public static void PrintBlanks(char[] blanks){
 }
 
   //Sindy's Code
-  public static void userGuesses(char [] letterArray, char [] blankArray){ //verify "char [] letterArray"
+  public static void userGuesses(char[] letterArray, char[] blankArray){ //verify "char [] letterArray"
     Scanner input = new Scanner (System.in);
     int leftover = blankArray.length; //Program uses this to penalize the user for incorrect guesses
     int blank; // Program uses this to see if more guesses can be made
