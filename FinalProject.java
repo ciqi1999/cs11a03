@@ -30,7 +30,7 @@ public class FinalProject {
         System.out.println("Goodbye");
         playGame = false;
       } else {
-        Shuffle(words, r);
+        index++;
       }
     }
   }
