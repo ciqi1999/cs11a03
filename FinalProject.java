@@ -8,6 +8,7 @@ public class FinalProject {
     Scanner userInput = new Scanner(System.in);
     Random r = new Random();
     boolean playGame = true;
+    int index = 0;
 
     String[] words = GetDictionary(input1, input2);
     Shuffle(words, r);
