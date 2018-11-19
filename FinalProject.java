@@ -16,21 +16,11 @@ public class FinalProject {
 
     while(playGame){
       //input Grace's method
-<<<<<<< HEAD
-      char[] letters = CreateLetters();
-      char[] blanks = CreateBlanks();
-      PrintBlanks();
-     
-
-      //need to put letters of the word into wordArray array
-
-=======
       char[] letters = CreateLetters(words, index);
       char[] blanks = CreateBlanks(words, index);
       PrintBlanks(blanks);
         //need to put letters of the word into wordArray array
 
->>>>>>> ff1efcddfe37d925e9c446eb503eb0589d6e7752
       //input Sindy's method
       userGuesses(letters, blanks);
 
@@ -113,15 +103,8 @@ public static void PrintBlanks(char[] blanks){
   System.out.println();
 }
 
-<<<<<<< HEAD
-//Sindy's Code
-
-
-  public static void userGuesses(char [] letterArray, char [] blankArray){ //verify "char [] letterArray"
-=======
   //Sindy's Code
   public static void userGuesses(char[] letterArray, char[] blankArray){
->>>>>>> ff1efcddfe37d925e9c446eb503eb0589d6e7752
     Scanner input = new Scanner (System.in);
     int leftover = blankArray.length; //Program uses this to penalize the user for incorrect guesses
     int blank; // Program uses this to see if more guesses can be made
@@ -138,17 +121,11 @@ public static void PrintBlanks(char[] blanks){
         if (letterArray[index]==letter){
           //Prints that letter onto the place where the underscore has the location
           blankArray[index] = letter;
-<<<<<<< HEAD
-          leftover = blankArray.length-1;
-=======
           leftover--;
->>>>>>> ff1efcddfe37d925e9c446eb503eb0589d6e7752
         } else {
           blank++;
         }
       }
-
-      PrintBlanks(blankArray);
 
       //If No,
       if (blank==leftover){
