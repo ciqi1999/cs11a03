@@ -72,7 +72,7 @@ public static void Shuffle(String[] words, Random r){
 public static char[] CreateLetters(String[] words, int index){
   int l = words[index].length();
   char[] letters = new char[l];
-  for(int i = 0; i < (l - 1); i++){
+  for(int i = 0; i < l; i++){ 
     letters[i] = words[index].charAt(i);
   }
   return letters;
