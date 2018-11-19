@@ -106,12 +106,14 @@ public static void PrintBlanks(char[] blanks){
   //Sindy's Code
   public static void userGuesses(char[] letterArray, char[] blankArray){
     Scanner input = new Scanner (System.in);
-    int leftover = blankArray.length; //Program uses this to penalize the user for incorrect guesses
+    int preCount = blankArray.length; //Program uses this to penalize the user for incorrect guesses
+    int postCount= preCount;
     int blank; // Program uses this to see if more guesses can be made
     int lives = 5;
     //Prompt user to enter a letter
     do {
       blank= 0;
+      preCount= postCount;
       System.out.print("Guess a letter: ");
       char letter = input.next().charAt(0);
 
@@ -121,14 +123,14 @@ public static void PrintBlanks(char[] blanks){
         if (letterArray[index]==letter){
           //Prints that letter onto the place where the underscore has the location
           blankArray[index] = letter;
-          leftover--;
+          postCount--;
         } else {
           blank++;
         }
       }
 
       //If No,
-      if (blank==leftover){
+      if (postCount==preCount){
         //Takes point away
         lives--;
         if (lives!=0){
