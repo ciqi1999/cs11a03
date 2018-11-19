@@ -16,7 +16,10 @@ public class FinalProject {
 
     while(playGame){
       //input Grace's method
+<<<<<<< HEAD
 
+=======
+>>>>>>> c29b18cc4ef87cf732f368c5a2cb43a4dc1709b6
       char[] letters = CreateLetters(words, index);
       char[] blanks = CreateBlanks(words, index);
       PrintBlanks(blanks);
@@ -104,16 +107,21 @@ public static void PrintBlanks(char[] blanks){
   System.out.println();
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> c29b18cc4ef87cf732f368c5a2cb43a4dc1709b6
   //Sindy's Code
   public static void userGuesses(char[] letterArray, char[] blankArray){
     Scanner input = new Scanner (System.in);
-    int leftover = blankArray.length; //Program uses this to penalize the user for incorrect guesses
+    int preCount = blankArray.length; //Program uses this to penalize the user for incorrect guesses
+    int postCount= preCount;
     int blank; // Program uses this to see if more guesses can be made
     int lives = 5;
     //Prompt user to enter a letter
     do {
       blank= 0;
+      preCount= postCount;
       System.out.print("Guess a letter: ");
       char letter = input.next().charAt(0);
 
@@ -123,16 +131,19 @@ public static void PrintBlanks(char[] blanks){
         if (letterArray[index]==letter){
           //Prints that letter onto the place where the underscore has the location
           blankArray[index] = letter;
+<<<<<<< HEAD
           leftover--;
         } else {
+=======
+          postCount--;
+        } else if (blankArray[index]=='_'){
+>>>>>>> c29b18cc4ef87cf732f368c5a2cb43a4dc1709b6
           blank++;
         }
       }
 
-      PrintBlanks(blankArray);
-
       //If No,
-      if (blank==leftover){
+      if (postCount==preCount){
         //Takes point away
         lives--;
         if (lives!=0){
