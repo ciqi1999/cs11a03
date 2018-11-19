@@ -18,8 +18,9 @@ public class FinalProject {
       char[] letters = CreateLetters();
       char[] blanks = CreateBlanks();
       PrintBlanks();
-        //need to put letters of the word into wordArray array
+     
 
+      //need to put letters of the word into wordArray array
 
       //input Sindy's method
       userGuesses();
@@ -105,7 +106,9 @@ public static void PrintBlanks(char[] blanks){
   System.out.println();
 }
 
-  //Sindy's Code
+//Sindy's Code
+
+
   public static void userGuesses(char [] letterArray, char [] blankArray){ //verify "char [] letterArray"
     Scanner input = new Scanner (System.in);
     int leftover = blankArray.length; //Program uses this to penalize the user for incorrect guesses
@@ -123,11 +126,13 @@ public static void PrintBlanks(char[] blanks){
         if (letterArray[index]==letter){
           //Prints that letter onto the place where the underscore has the location
           blankArray[index] = letter;
-          leftover=blankArray.length-1;
+          leftover = blankArray.length-1;
         } else {
           blank++;
         }
       }
+
+      PrintBlanks(blankArray);
 
       //If No,
       if (blank==leftover){
