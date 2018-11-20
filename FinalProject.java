@@ -10,15 +10,15 @@ public class FinalProject {
     boolean playGame = true;
     int index = 0;
 
-    String[] words = GetDictionary(input1, input2);
-    Shuffle(words, r);
+    String[] words = getDictionary(input1, input2);
+    shuffle(words, r);
     System.out.println("Welcome to our Word Guessing Game!");
 
     while(playGame){
       //input Grace's method
-      char[] letters = CreateLetters(words, index);
-      char[] blanks = CreateBlanks(words, index);
-      PrintBlanks(blanks);
+      char[] letters = createLetters(words, index);
+      char[] blanks = createBlanks(words, index);
+      printBlanks(blanks);
         //need to put letters of the word into wordArray array
 
       //input Sindy's method
@@ -39,71 +39,71 @@ public class FinalProject {
 // Method purpose: get words in the dictionary and put them into an array
 // Input: two Scanner
 // Output: array words[] which contains all the words in the dictionary.
-public static String[] GetDictionary(Scanner input1, Scanner input2){
-  //count the number of words in the dictionary.
-  int count = 0;
-  while (input1.hasNext()){
-    String word = input1.next();
-    count++;
+  public static String[] getDictionary(Scanner input1, Scanner input2){
+    //count the number of words in the dictionary.
+    int count = 0;
+    while (input1.hasNext()){
+      String word = input1.next();
+      count++;
+    }
+    //put these words into an array called words[]
+    String[] words = new String[count];
+    for(int i = 0; i < count; i++){
+      words[i] = input2.next();
+    }
+    //return the array.
+    return words;
   }
-  //put these words into an array called words[]
-  String[] words = new String[count];
-  for(int i = 0; i < count; i++){
-    words[i] = input2.next();
-  }
-  //return the array.
-  return words;
-}
 
-// Method purpose: shuffle the array words[]
-// Input: array words[], int count, and random number generator r.
-// Output: nothing
-public static void Shuffle(String[] words, Random r){
-   for(int i = 0; i < words.length; i++){
-      int j = r.nextInt(words.length);
-      String temp = words[i];
-      words[i] = words[j];
-      words[j] = temp;
-   }
-}
-
-// Methods Purpose: read an element from the array and
-//                 put letters of that words into an array of chars;
-// Input: array words[], int index
-// Output: array letters[]
-public static char[] CreateLetters(String[] words, int index){
-  int l = words[index].length();
-  char[] letters = new char[l];
-  for(int i = 0; i < l; i++){
-    letters[i] = words[index].charAt(i);
+  // Method purpose: shuffle the array words[]
+  // Input: array words[], int count, and random number generator r.
+  // Output: nothing
+  public static void shuffle(String[] words, Random r){
+     for(int i = 0; i < words.length; i++){
+        int j = r.nextInt(words.length);
+        String temp = words[i];
+        words[i] = words[j];
+        words[j] = temp;
+     }
   }
-  return letters;
-}
 
-// Method Purpose: create an array of underscores with the number of
-//                 underscores equal to the number of letters in the
-//                 word chosen above.
-// Input: array words[], int index
-// Output: array blanks[]
-public static char[] CreateBlanks(String[] words, int index){
-  int l = words[index].length();
-  char[] blanks = new char[l];
-  for(int i = 0; i < l; i++){
-    blanks[i] = '_';
+  // Methods Purpose: read an element from the array and
+  //                 put letters of that words into an array of chars;
+  // Input: array words[], int index
+  // Output: array letters[]
+  public static char[] createLetters(String[] words, int index){
+    int l = words[index].length();
+    char[] letters = new char[l];
+    for(int i = 0; i < l; i++){
+      letters[i] = words[index].charAt(i);
+    }
+    return letters;
   }
-  return blanks;
-}
 
-// Method Purpose: Print out letters in array blanks[]
-// Input: array blanks[]
-// Output: nothing
-public static void PrintBlanks(char[] blanks){
-  int l = blanks.length;
-  for(int i = 0; i < l; i++){
-    System.out.printf("%c ", blanks[i]);
+  // Method Purpose: create an array of underscores with the number of
+  //                 underscores equal to the number of letters in the
+  //                 word chosen above.
+  // Input: array words[], int index
+  // Output: array blanks[]
+  public static char[] createBlanks(String[] words, int index){
+    int l = words[index].length();
+    char[] blanks = new char[l];
+    for(int i = 0; i < l; i++){
+      blanks[i] = '_';
+    }
+    return blanks;
   }
-  System.out.println();
-}
+
+  // Method Purpose: Print out letters in array blanks[]
+  // Input: array blanks[]
+  // Output: nothing
+  public static void printBlanks(char[] blanks){
+    int l = blanks.length;
+    for(int i = 0; i < l; i++){
+      System.out.printf("%c ", blanks[i]);
+    }
+    System.out.println();
+  }
 
   //Sindy's Code
   public static void userGuesses(char[] letterArray, char[] blankArray){
@@ -145,7 +145,7 @@ public static void PrintBlanks(char[] blanks){
         int trash=0; //I just had to put an else statement
       }
 
-      PrintBlanks(blankArray);
+      printBlanks(blankArray);
     //Program checks if there are any more blank spaces. If yes, prompt user for another guess.
     } while (blank!=0);
   }
