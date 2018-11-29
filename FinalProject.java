@@ -12,13 +12,16 @@ public class FinalProject {
 
     String[] words = getDictionary(input1, input2);
     shuffle(words, r);
+    System.out.println();
     System.out.println("Welcome to our Word Guessing Game!");
-
+    System.out.println("Let's start the game.");
+    System.out.println("Please enter your guess in lowercase.");
     while(playGame){
       //input Grace's method
       char[] letters = createLetters(words, index);
       char[] blanks = createBlanks(words, index);
       printBlanks(blanks);
+      System.out.println();
         //need to put letters of the word into wordArray array
 
       //input Sindy's method
@@ -111,7 +114,7 @@ public class FinalProject {
     int preCount = blankArray.length; //Program uses this to penalize the user for incorrect guesses
     int postCount= preCount;
     int blank; // Program uses this to see if more guesses can be made
-    int lives = 5;
+    int lives = 10;
     //Prompt user to enter a letter
     do {
       blank= 0;
@@ -136,16 +139,17 @@ public class FinalProject {
         //Takes point away
         lives--;
         if (lives!=0){
-          System.out.printf("Nope, no \"%c\". Lives: %d%n%n", letter, lives);
+          System.out.printf("Nope, no \"%c\".%n", letter);
         } else {
-          System.out.printf("Nope, no \"%c\". Lives: %d %nGame over.%n%n", letter, lives);
+          System.out.printf("Nope, no \"%c\". %nGame over.%n", letter);
           System.exit(1);
         }
       } else {
         int trash=0; //I just had to put an else statement
       }
-
+      System.out.printf("Lives: %d %n",lives);
       printBlanks(blankArray);
+      System.out.println();
     //Program checks if there are any more blank spaces. If yes, prompt user for another guess.
     } while (blank!=0);
   }
