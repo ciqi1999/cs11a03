@@ -14,6 +14,7 @@ public class FinalProject {
     shuffle(words, r);
     System.out.println();
     System.out.println("Welcome to our Word Guessing Game!");
+    System.out.println();
     System.out.println("Let's start the game.");
     System.out.println("Please enter your guess in lowercase.");
     while(playGame){
@@ -25,7 +26,7 @@ public class FinalProject {
         //need to put letters of the word into wordArray array
 
       //input Sindy's method
-      userGuesses(letters, blanks);
+      userGuesses(letters, blanks, words[index]);
 
       //input Cindy's method
       System.out.println("You win! Do you want to play again? Please enter \"yes\" or \"no\"");
@@ -109,12 +110,13 @@ public class FinalProject {
   }
 
   //Sindy's Code
-  public static void userGuesses(char[] letterArray, char[] blankArray){
+  public static void userGuesses(char[] letterArray, char[] blankArray, String word){
     Scanner input = new Scanner (System.in);
     int preCount = blankArray.length; //Program uses this to penalize the user for incorrect guesses
     int postCount= preCount;
     int blank; // Program uses this to see if more guesses can be made
     int lives = 10;
+
     //Prompt user to enter a letter
     do {
       blank= 0;
@@ -141,7 +143,10 @@ public class FinalProject {
         if (lives!=0){
           System.out.printf("Nope, no \"%c\".%n", letter);
         } else {
-          System.out.printf("Nope, no \"%c\". %nGame over.%n", letter);
+          System.out.printf("Nope, no \"%c\". %n", letter);
+          System.out.println("The word was "+ word);
+          System.out.printf("%nGame over.%n");
+
           System.exit(1);
         }
       } else {
