@@ -134,23 +134,28 @@ public class FinalProject {
       }
 
       //If No,
-      if (postCount==preCount){
-        //Takes point away
-        lives--;
-        if (lives!=0){
-          System.out.printf("Nope, no \"%c\".%n", letter);
-        } else {
-          System.out.printf("Nope, no \"%c\". %n", letter);
-          System.out.printf("The word was \"%s\".", word);
-          System.out.printf("%nGame over.%n");
-
-          System.exit(1);
-        }
-      }
-      System.out.printf("Lives: %d %n",lives);
+      lives= wrongGuess(word, letter, lives, preCount, postCount);
       printBlanks(blankArray);
       System.out.println();
     //Program checks if there are any more blank spaces. If yes, prompt user for another guess.
     } while (blank!=0);
+  }
+
+  public static int wrongGuess(String word, char letter, int lives, int preCount, int postCount){
+    if (postCount==preCount){
+      //Takes point away
+      lives--;
+      if (lives!=0){
+        System.out.printf("Nope, no \"%c\".%n", letter);
+      } else {
+        System.out.printf("Nope, no \"%c\". %n", letter);
+        System.out.printf("The word was \"%s\".%n", word);
+        System.out.printf("Game over.%n");
+
+        System.exit(1);
+      }
+    }
+    System.out.printf("Lives: %d %n",lives);
+    return lives;
   }
 }
