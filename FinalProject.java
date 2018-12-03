@@ -4,12 +4,11 @@ import java.util.*;
 public class FinalProject {
   public static void main(String[] args) throws FileNotFoundException{
     Scanner userInput = new Scanner(System.in);
-    Random r = new Random();
     boolean playGame = true;
     int index = 0;
 
     String[] words = getDictionary("dictionary.txt");
-    shuffle(words, r);
+    shuffle(words);
     System.out.printf("%nWelcome to our Word Guessing Game!%n%n");
     System.out.println("Let's start the game.");
     System.out.println("Please enter your guess in lowercase.");
@@ -59,13 +58,14 @@ public class FinalProject {
   // Method purpose: shuffle the array words[]
   // Input: array words[], int count, and random number generator r.
   // Output: nothing
-  public static void shuffle(String[] words, Random r){
-     for(int i = 0; i < words.length; i++){
-        int j = r.nextInt(words.length);
-        String temp = words[i];
-        words[i] = words[j];
-        words[j] = temp;
-     }
+  public static void shuffle(String[] words){
+    Random r = new Random();
+    for(int i = 0; i < words.length; i++){
+      int j = r.nextInt(words.length);
+      String temp = words[i];
+      words[i] = words[j];
+      words[j] = temp;
+    }
   }
 
   // Methods Purpose: read an element from the array and
