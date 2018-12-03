@@ -146,8 +146,6 @@ public class FinalProject {
 
           System.exit(1);
         }
-      } else {
-        int trash=0; //I just had to put an else statement
       }
       System.out.printf("Lives: %d %n",lives);
       printBlanks(blankArray);
