@@ -2,19 +2,15 @@ import java.io.*;
 import java.util.*;
 
 public class FinalProject {
-  public static void main(String[] args)throws FileNotFoundException{
-    Scanner input1 = new Scanner(new File("dictionary.txt"));
-    Scanner input2 = new Scanner(new File("dictionary.txt"));
+  public static void main(String[] args) throws FileNotFoundException{
     Scanner userInput = new Scanner(System.in);
     Random r = new Random();
     boolean playGame = true;
     int index = 0;
 
-    String[] words = getDictionary(input1, input2);
+    String[] words = getDictionary("dictionary.txt");
     shuffle(words, r);
-    System.out.println();
-    System.out.println("Welcome to our Word Guessing Game!");
-    System.out.println();
+    System.out.printf("%nWelcome to our Word Guessing Game!%n%n");
     System.out.println("Let's start the game.");
     System.out.println("Please enter your guess in lowercase.");
     while(playGame){
@@ -23,13 +19,12 @@ public class FinalProject {
       char[] blanks = createBlanks(words, index);
       printBlanks(blanks);
       System.out.println();
-        //need to put letters of the word into wordArray array
 
       //input Sindy's method
       userGuesses(letters, blanks, words[index]);
 
       //input Cindy's method
-      System.out.println("You win! Do you want to play again? Please enter \"yes\" or \"no\"");
+      System.out.println("You win! Do you want to play again? Please enter \"yes\" or \"no\":");
       if (userInput.nextLine().equals("no")){
         System.out.println("Goodbye");
         playGame = false;
@@ -43,7 +38,9 @@ public class FinalProject {
 // Method purpose: get words in the dictionary and put them into an array
 // Input: two Scanner
 // Output: array words[] which contains all the words in the dictionary.
-  public static String[] getDictionary(Scanner input1, Scanner input2){
+  public static String[] getDictionary(String file) throws FileNotFoundException{
+    Scanner input1 = new Scanner(new File(file));
+    Scanner input2 = new Scanner(new File(file));
     //count the number of words in the dictionary.
     int count = 0;
     while (input1.hasNext()){
@@ -72,7 +69,7 @@ public class FinalProject {
   }
 
   // Methods Purpose: read an element from the array and
-  //                 put letters of that words into an array of chars;
+  //                  put letters of that words into an array of chars;
   // Input: array words[], int index
   // Output: array letters[]
   public static char[] createLetters(String[] words, int index){
@@ -144,7 +141,7 @@ public class FinalProject {
           System.out.printf("Nope, no \"%c\".%n", letter);
         } else {
           System.out.printf("Nope, no \"%c\". %n", letter);
-          System.out.println("The word was "+ word);
+          System.out.printf("The word was \"%s\".", word);
           System.out.printf("%nGame over.%n");
 
           System.exit(1);
