@@ -32,11 +32,13 @@ public class FinalProject {
       }
     }
   }
-//Grace's Code
+  //Grace's Code
 
-// Method purpose: get words in the dictionary and put them into an array
-// Input: two Scanner
-// Output: array words[] which contains all the words in the dictionary.
+  /**
+  reads words from the file and puts them into an array
+  @param file: the file containing the list of mystery words
+  @return array words[] which contains all the mystery words
+  */
   public static String[] getDictionary(String file) throws FileNotFoundException{
     Scanner input1 = new Scanner(new File(file));
     Scanner input2 = new Scanner(new File(file));
@@ -55,9 +57,10 @@ public class FinalProject {
     return words;
   }
 
-  // Method purpose: shuffle the array words[]
-  // Input: array words[], int count, and random number generator r.
-  // Output: nothing
+  /**
+  shuffles the values within the array of mystery words
+  @param words: array of mystery words
+  */
   public static void shuffle(String[] words){
     Random r = new Random();
     for(int i = 0; i < words.length; i++){
@@ -68,10 +71,12 @@ public class FinalProject {
     }
   }
 
-  // Methods Purpose: read an element from the array and
-  //                  put letters of that words into an array of chars;
-  // Input: array words[], int index
-  // Output: array letters[]
+  /**
+  puts the letters (of the word at array[index]) into an array of chars
+  @param words: array of mystery words
+  @param index: index of array
+  @return array letters[], containing the mystery word's letters
+  */
   public static char[] createLetters(String[] words, int index){
     int l = words[index].length();
     char[] letters = new char[l];
@@ -81,11 +86,12 @@ public class FinalProject {
     return letters;
   }
 
-  // Method Purpose: create an array of underscores with the number of
-  //                 underscores equal to the number of letters in the
-  //                 word chosen above.
-  // Input: array words[], int index
-  // Output: array blanks[]
+  /**
+  creates an array of underscores, with the number of underscores equal to the number of letters in the mystery word
+  @param words: array of mystery words
+  @param index: index of array
+  @return array blanks[], containing the underscores
+  */
   public static char[] createBlanks(String[] words, int index){
     int l = words[index].length();
     char[] blanks = new char[l];
@@ -95,9 +101,10 @@ public class FinalProject {
     return blanks;
   }
 
-  // Method Purpose: Print out letters in array blanks[]
-  // Input: array blanks[]
-  // Output: nothing
+  /**
+  Prints the mystery word's letters into the array of underscores
+  @param blanks: array of underscores
+  */
   public static void printBlanks(char[] blanks){
     int l = blanks.length;
     for(int i = 0; i < l; i++){
@@ -141,6 +148,15 @@ public class FinalProject {
     } while (blank!=0);
   }
 
+  /**
+    returns the numbers of lives the user has after making an incorrect guess
+    @param word: mystery word being guessed
+    @param letter: the letter the user enters as their guess
+    @param lives: the number of lives the user has
+    @param preCount: number of blank spaces leftover before the user enters their guess
+    @param postCount: number of blank spaces leftover after the user enters their guess
+    @return the number of lives leftover
+    */
   public static int wrongGuess(String word, char letter, int lives, int preCount, int postCount){
     if (postCount==preCount){
       //Takes point away
