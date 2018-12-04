@@ -2,3 +2,4 @@ Name: Grace Chen
 Github: gchenra
 Team#: 16
 Favorite Color: purple
+email:gracechen@brandeis.edu
